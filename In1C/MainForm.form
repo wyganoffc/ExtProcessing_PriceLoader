@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:form="http://v8.1c.ru/8.2/uobjects/form">
+  <items>
+    <form:ManagedForm>
+      <name>MainForm</name>
+      <synonym>
+        <v8:item xmlns:v8="http://v8.1c.ru/8.1/data/core">
+          <v8:lang>ru</v8:lang>
+          <v8:content>Загрузка прайса из Excel</v8:content>
+        </v8:item>
+      </synonym>
+      <usePurposes>
+        <form:CommonUsePurpose>
+          <form:usePurpose>CommonUsePurpose.PersonalComputer</form:usePurpose>
+        </form:CommonUsePurpose>
+        <form:CommonUsePurpose>
+          <form:usePurpose>CommonUsePurpose.MobileDevice</form:usePurpose>
+        </form:CommonUsePurpose>
+      </usePurposes>
+      <autoCommandBar>
+        <name>КоманднаяПанель</name>
+        <id>1</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <commonUsePurpose>true</commonUsePurpose>
+          <mobileUsePurpose>true</mobileUsePurpose>
+        </userVisible>
+        <horizontalStretch>false</horizontalStretch>
+      </autoCommandBar>
+    </form:ManagedForm>
+    <form:FormGroup>
+      <name>ГруппаНастройки</name>
+      <id>2</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <commonUsePurpose>true</commonUsePurpose>
+        <mobileUsePurpose>true</mobileUsePurpose>
+      </userVisible>
+      <title>
+        <v8:item xmlns:v8="http://v8.1c.ru/8.1/data/core">
+          <v8:lang>ru</v8:lang>
+          <v8:content>Настройки загрузки</v8:content>
+        </v8:item>
+      </title>
+      <horizontalStretch>true</horizontalStretch>
+      <group>Vertical</group>
+      <showTitle>true</showTitle>
+    </form:FormGroup>
+    <form:FormField>
+      <name>ПутьКФайлу</name>
+      <id>3</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <commonUsePurpose>true</commonUsePurpose>
+        <mobileUsePurpose>true</mobileUsePurpose>
+      </userVisible>
+      <title>
+        <v8:item xmlns:v8="http://v8.1c.ru/8.1/data/core">
+          <v8:lang>ru</v8:lang>
+          <v8:content>Путь к файлу Excel</v8:content>
+        </v8:item>
+      </title>
+      <parent>ГруппаНастройки</parent>
+      <horizontalStretch>true</horizontalStretch>
+      <dataPath>ПутьКФайлу</dataPath>
+      <dragAndDrop>true</dragAndDrop>
+      <choiceButton>true</choiceButton>
+      <choiceButtonOnClick>ПутьКФайлуНачалоВыбора</choiceButtonOnClick>
+      <startChoiceEvent>true</startChoiceEvent>
+    </form:FormField>
+    <form:FormField>
+      <name>ТипЦены</name>
+      <id>4</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <commonUsePurpose>true</commonUsePurpose>
+        <mobileUsePurpose>true</mobileUsePurpose>
+      </userVisible>
+      <title>
+        <v8:item xmlns:v8="http://v8.1c.ru/8.1/data/core">
+          <v8:lang>ru</v8:lang>
+          <v8:content>Тип цены</v8:content>
+        </v8:item>
+      </title>
+      <parent>ГруппаНастройки</parent>
+      <horizontalStretch>true</horizontalStretch>
+      <dataPath>ТипЦены</dataPath>
+      <choiceButton>true</choiceButton>
+      <chooseListMode>true</chooseListMode>
+    </form:FormField>
+    <form:FormGroup>
+      <name>ГруппаПредпросмотр</name>
+      <id>5</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <commonUsePurpose>true</commonUsePurpose>
+        <mobileUsePurpose>true</mobileUsePurpose>
+      </userVisible>
+      <title>
+        <v8:item xmlns:v8="http://v8.1c.ru/8.1/data/core">
+          <v8:lang>ru</v8:lang>
+          <v8:content>Предпросмотр данных</v8:content>
+        </v8:item>
+      </title>
+      <horizontalStretch>true</horizontalStretch>
+      <verticalStretch>true</verticalStretch>
+      <group>Vertical</group>
+      <showTitle>true</showTitle>
+    </form:FormGroup>
+    <form:Table>
+      <name>ТаблицаПредпросмотра</name>
+      <id>6</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <commonUsePurpose>true</commonUsePurpose>
+        <mobileUsePurpose>true</mobileUsePurpose>
+      </userVisible>
+      <parent>ГруппаПредпросмотр</parent>
+      <horizontalStretch>true</horizontalStretch>
+      <verticalStretch>true</verticalStretch>
+      <dataPath>ТаблицаПредпросмотра</dataPath>
+      <readOnly>true</readOnly>
+      <searchStringLocation>None</searchStringLocation>
+    </form:Table>
+    <form:FormGroup>
+      <name>ГруппаДействия</name>
+      <id>7</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <commonUsePurpose>true</commonUsePurpose>
+        <mobileUsePurpose>true</mobileUsePurpose>
+      </userVisible>
+      <horizontalStretch>true</horizontalStretch>
+      <group>Horizontal</group>
+      <showTitle>false</showTitle>
+    </form:FormGroup>
+    <form:Button>
+      <name>КнопкаЗагрузить</name>
+      <id>8</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <commonUsePurpose>true</commonUsePurpose>
+        <mobileUsePurpose>true</mobileUsePurpose>
+      </userVisible>
+      <title>
+        <v8:item xmlns:v8="http://v8.1c.ru/8.1/data/core">
+          <v8:lang>ru</v8:lang>
+          <v8:content>Загрузить</v8:content>
+        </v8:item>
+      </title>
+      <parent>ГруппаДействия</parent>
+      <commandName>Загрузить</commandName>
+      <defaultButton>true</defaultButton>
+    </form:Button>
+    <form:Button>
+      <name>КнопкаШаблон</name>
+      <id>9</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <commonUsePurpose>true</commonUsePurpose>
+        <mobileUsePurpose>true</mobileUsePurpose>
+      </userVisible>
+      <title>
+        <v8:item xmlns:v8="http://v8.1c.ru/8.1/data/core">
+          <v8:lang>ru</v8:lang>
+          <v8:content>Скачать шаблон</v8:content>
+        </v8:item>
+      </title>
+      <parent>ГруппаДействия</parent>
+      <commandName>СкачатьШаблон</commandName>
+    </form:Button>
+    <form:FormField>
+      <name>СообщениеРезультата</name>
+      <id>10</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <commonUsePurpose>true</commonUsePurpose>
+        <mobileUsePurpose>true</mobileUsePurpose>
+      </userVisible>
+      <title>
+        <v8:item xmlns:v8="http://v8.1c.ru/8.1/data/core">
+          <v8:lang>ru</v8:lang>
+          <v8:content>Результат</v8:content>
+        </v8:item>
+      </title>
+      <horizontalStretch>true</horizontalStretch>
+      <verticalStretch>true</verticalStretch>
+      <dataPath>СообщениеРезультата</dataPath>
+      <readOnly>true</readOnly>
+      <multiLine>true</multiLine>
+    </form:FormField>
+  </items>
+  <attributes>
+    <form:FormAttribute>
+      <name>ПутьКФайлу</name>
+      <title>
+        <v8:item xmlns:v8="http://v8.1c.ru/8.1/data/core">
+          <v8:lang>ru</v8:lang>
+          <v8:content>Путь к файлу</v8:content>
+        </v8:item>
+      </title>
+      <type>
+        <v8:Type xmlns:v8="http://v8.1c.ru/8.1/data/core">xs:string</v8:Type>
+        <v8:StringQualifiers xmlns:v8="http://v8.1c.ru/8.1/data/core">
+          <v8:Length>0</v8:Length>
+          <v8:AllowedLength>Variable</v8:AllowedLength>
+        </v8:StringQualifiers>
+      </type>
+      <main>true</main>
+      <saveData>true</saveData>
+    </form:FormAttribute>
+    <form:FormAttribute>
+      <name>ТипЦены</name>
+      <title>
+        <v8:item xmlns:v8="http://v8.1c.ru/8.1/data/core">
+          <v8:lang>ru</v8:lang>
+          <v8:content>Тип цены</v8:content>
+        </v8:item>
+      </title>
+      <type>
+        <v8:Type xmlns:v8="http://v8.1c.ru/8.1/data/core">cfg:CatalogRef.ТипыЦенНоменклатуры</v8:Type>
+      </type>
+      <main>true</main>
+      <saveData>true</saveData>
+    </form:FormAttribute>
+    <form:FormAttribute>
+      <name>СообщениеРезультата</name>
+      <title>
+        <v8:item xmlns:v8="http://v8.1c.ru/8.1/data/core">
+          <v8:lang>ru</v8:lang>
+          <v8:content>Результат загрузки</v8:content>
+        </v8:item>
+      </title>
+      <type>
+        <v8:Type xmlns:v8="http://v8.1c.ru/8.1/data/core">xs:string</v8:Type>
+        <v8:StringQualifiers xmlns:v8="http://v8.1c.ru/8.1/data/core">
+          <v8:Length>0</v8:Length>
+          <v8:AllowedLength>Variable</v8:AllowedLength>
+        </v8:StringQualifiers>
+      </type>
+      <main>true</main>
+      <saveData>true</saveData>
+    </form:FormAttribute>
+    <form:FormAttribute>
+      <name>ТаблицаПредпросмотра</name>
+      <title>
+        <v8:item xmlns:v8="http://v8.1c.ru/8.1/data/core">
+          <v8:lang>ru</v8:lang>
+          <v8:content>Таблица предпросмотра</v8:content>
+        </v8:item>
+      </title>
+      <type>
+        <v8:Type xmlns:v8="http://v8.1c.ru/8.1/data/core">xs:ValueTable</v8:Type>
+      </type>
+      <main>true</main>
+      <columns>
+        <form:FormAttribute>
+          <name>Артикул</name>
+          <title>
+            <v8:item xmlns:v8="http://v8.1c.ru/8.1/data/core">
+              <v8:lang>ru</v8:lang>
+              <v8:content>Артикул</v8:content>
+            </v8:item>
+          </title>
+          <type>
+            <v8:Type xmlns:v8="http://v8.1c.ru/8.1/data/core">xs:string</v8:Type>
+            <v8:StringQualifiers xmlns:v8="http://v8.1c.ru/8.1/data/core">
+              <v8:Length>50</v8:Length>
+              <v8:AllowedLength>Variable</v8:AllowedLength>
+            </v8:StringQualifiers>
+          </type>
+        </form:FormAttribute>
+        <form:FormAttribute>
+          <name>Наименование</name>
+          <title>
+            <v8:item xmlns:v8="http://v8.1c.ru/8.1/data/core">
+              <v8:lang>ru</v8:lang>
+              <v8:content>Наименование</v8:content>
+            </v8:item>
+          </title>
+          <type>
+            <v8:Type xmlns:v8="http://v8.1c.ru/8.1/data/core">xs:string</v8:Type>
+            <v8:StringQualifiers xmlns:v8="http://v8.1c.ru/8.1/data/core">
+              <v8:Length>100</v8:Length>
+              <v8:AllowedLength>Variable</v8:AllowedLength>
+            </v8:StringQualifiers>
+          </type>
+        </form:FormAttribute>
+        <form:FormAttribute>
+          <name>Цена</name>
+          <title>
+            <v8:item xmlns:v8="http://v8.1c.ru/8.1/data/core">
+              <v8:lang>ru</v8:lang>
+              <v8:content>Цена</v8:content>
+            </v8:item>
+          </title>
+          <type>
+            <v8:Type xmlns:v8="http://v8.1c.ru/8.1/data/core">xs:decimal</v8:Type>
+            <v8:NumberQualifiers xmlns:v8="http://v8.1c.ru/8.1/data/core">
+              <v8:Digits>15</v8:Digits>
+              <v8:FractionDigits>2</v8:FractionDigits>
+              <v8:AllowedSign>Any</v8:AllowedSign>
+            </v8:NumberQualifiers>
+          </type>
+        </form:FormAttribute>
+        <form:FormAttribute>
+          <name>Валюта</name>
+          <title>
+            <v8:item xmlns:v8="http://v8.1c.ru/8.1/data/core">
+              <v8:lang>ru</v8:lang>
+              <v8:content>Валюта</v8:content>
+            </v8:item>
+          </title>
+          <type>
+            <v8:Type xmlns:v8="http://v8.1c.ru/8.1/data/core">xs:string</v8:Type>
+            <v8:StringQualifiers xmlns:v8="http://v8.1c.ru/8.1/data/core">
+              <v8:Length>10</v8:Length>
+              <v8:AllowedLength>Variable</v8:AllowedLength>
+            </v8:StringQualifiers>
+          </type>
+        </form:FormAttribute>
+      </columns>
+      <saveData>true</saveData>
+    </form:FormAttribute>
+  </attributes>
+  <commands>
+    <form:FormCommand>
+      <name>Загрузить</name>
+      <title>
+        <v8:item xmlns:v8="http://v8.1c.ru/8.1/data/core">
+          <v8:lang>ru</v8:lang>
+          <v8:content>Загрузить</v8:content>
+        </v8:item>
+      </title>
+      <action>Загрузить</action>
+    </form:FormCommand>
+    <form:FormCommand>
+      <name>СкачатьШаблон</name>
+      <title>
+        <v8:item xmlns:v8="http://v8.1c.ru/8.1/data/core">
+          <v8:lang>ru</v8:lang>
+          <v8:content>Скачать шаблон</v8:content>
+        </v8:item>
+      </title>
+      <action>СкачатьШаблон</action>
+    </form:FormCommand>
+  </commands>
+</form:Form>
